@@ -13,7 +13,7 @@ $opt[] = 'lorem';
 $opt[] = 'ipsum';
 $opt[] = 'dolor';
 
-$select->addOptons($opt);
+$select->addOptions($opt);
     
 echo $select->getElement();
 

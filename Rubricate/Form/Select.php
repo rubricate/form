@@ -26,7 +26,7 @@ class Select implements IGetElement
 
     public function getElement()
     {
-        return  $this->select->getElement();
+        return $this->select->getElement();
     } 
 
 
@@ -48,7 +48,7 @@ class Select implements IGetElement
 
 
 
-    public function addOptons($optArr, $selected = NULL)
+    public function addOptions($optArr, $selected = NULL)
     {
         $opt = new Option($optArr, $selected);
         $this->select->addInnerJoin($opt);
@@ -58,7 +58,7 @@ class Select implements IGetElement
 
 
 
-    public function addOptonsGroup($label, $optArr, $selected = NULL)
+    public function addOptionsGroup($label, $optArr, $selected = NULL)
     {
         $group = new CreateElement('optgroup');
         $opt   = new Option($optArr, $selected);
