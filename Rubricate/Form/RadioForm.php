@@ -5,14 +5,10 @@ namespace Rubricate\Form;
 use Rubricate\Element\IGetElement;
 
 
-
-
-class Checkbox implements IGetElement
+class RadioForm implements IGetElement
 {
 
     private $e;
-
-
 
 
 
@@ -20,11 +16,8 @@ class Checkbox implements IGetElement
     {
         self::_setValue($value);
 
-        $this->e = new Input('checkbox', $name, $value);
+        $this->e = new InputForm('radio', $name, $value);
     }
-
-
-
 
 
 
@@ -37,14 +30,10 @@ class Checkbox implements IGetElement
 
 
 
-
-
     public function getElement()
     {
         return  $this->e->getElement();
     } 
-
-
 
 
 
@@ -63,15 +52,11 @@ class Checkbox implements IGetElement
 
 
 
-
-
     private function _setValue($value)
     {
         $this->_value = $value; 
         return $this;
     } 
-
-
 
 
 

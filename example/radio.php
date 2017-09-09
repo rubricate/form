@@ -2,17 +2,17 @@
 
 require '../vendor/autoload.php';
 
-use Rubricate\Form\Label;
-use Rubricate\Form\Radio;
+use Rubricate\Form\LabelForm;
+use Rubricate\Form\RadioForm;
 
 
 for ($i = 1; $i <= 3; $i++)
 {
     
-   $radio = new Radio('optradio', $i);
+   $radio = new RadioForm('optradio', $i);
    $radio->checked(2);
 
-   $label = new Label(
+   $label = new LabelForm(
        $radio->getElement() . 'Option ' . $i
    );
 

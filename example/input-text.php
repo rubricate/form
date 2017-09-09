@@ -2,15 +2,15 @@
 
 require '../vendor/autoload.php';
 
-use Rubricate\Form\Input;
-use Rubricate\Form\Label;
+use Rubricate\Form\InputForm;
+use Rubricate\Form\LabelForm;
 use Rubricate\Element\CreateElement;
 
 
 
 $grp = new CreateElement('div');
-$lab = new Label('First Name:');
-$usr = new Input('text', 'firstName', 'john');
+$lab = new LabelForm('First Name:');
+$usr = new InputForm('text', 'firstName', 'john');
 
 $grp->setAttribute('class', 'form-group');
 $lab->setAttribute('for', 'usr');

@@ -5,12 +5,10 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-
-class Textarea implements IGetElement
+class TextareaForm implements IGetElement
 {
     private $e;
     
-
 
 
     public function __construct($name, $value = NULL)
@@ -19,8 +17,6 @@ class Textarea implements IGetElement
         $this->e->setAttribute('name', $name);
         $this->e->addInnerText($value);
     }
-
-
 
 
 
@@ -33,16 +29,12 @@ class Textarea implements IGetElement
 
 
 
-
-
     public function getElement()
     {
         return $this->e->getElement();
     } 
     
 
-
-    
 
 }
 

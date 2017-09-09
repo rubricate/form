@@ -5,11 +5,9 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;;
 
-class Option implements IGetElement
+class OptionForm implements IGetElement
 {
     private $optArr = array();
-
-
 
 
 
@@ -29,8 +27,6 @@ class Option implements IGetElement
             $this->optArr[] = $opt->getElement();
         }
     }
-
-
 
 
 

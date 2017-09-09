@@ -2,7 +2,10 @@
 
 namespace Rubricate\Form\Active;
 
-class  Checked
+
+
+
+class  CheckedActiveForm
 {
     private $value, $checked;
 
@@ -11,14 +14,17 @@ class  Checked
         $this->value  = $value;
     }
 
+
+
     public function isValid($checked)
     {
         return (
             $this->value !== NULL && 
             $this->value == $checked
         );
-
     } 
+
+
 
 }
 

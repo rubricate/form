@@ -5,7 +5,7 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-class Button implements IGetElement
+class ButtonForm implements IGetElement
 {
 
     public function __construct($value)
@@ -16,17 +16,12 @@ class Button implements IGetElement
 
 
 
-
-
-
     public function setAttribute($property, $value)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
-
-
 
 
 

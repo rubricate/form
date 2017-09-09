@@ -5,11 +5,12 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-class Select implements IGetElement
+class SelectForm implements IGetElement
 {
     private $select;
     private $name;
     private $optArr = array();
+
 
 
     public function __construct($name)
@@ -21,17 +22,10 @@ class Select implements IGetElement
 
 
 
-
-
-
     public function getElement()
     {
         return $this->select->getElement();
     } 
-
-
-
-
 
 
 
@@ -44,13 +38,9 @@ class Select implements IGetElement
 
 
 
-
-
-
-
     public function addOptions($optArr, $selected = NULL)
     {
-        $opt = new Option($optArr, $selected);
+        $opt = new OptionForm($optArr, $selected);
         $this->select->addInnerJoin($opt);
 
         return $this;
@@ -58,10 +48,11 @@ class Select implements IGetElement
 
 
 
+
     public function addOptionsGroup($label, $optArr, $selected = NULL)
     {
         $group = new CreateElement('optgroup');
-        $opt   = new Option($optArr, $selected);
+        $opt   = new OptionForm($optArr, $selected);
 
         $group->setAttribute('label', $label);
         $group->addInnerJoin($opt);
@@ -70,7 +61,6 @@ class Select implements IGetElement
 
         return $this;
     } 
-
 
 
 

@@ -2,17 +2,17 @@
 
 require '../vendor/autoload.php';
 
-use Rubricate\Form\Label;
-use Rubricate\Form\Checkbox;
+use Rubricate\Form\LabelForm;
+use Rubricate\Form\CheckboxForm;
 
 
 for ($i = 1; $i <= 3; $i++)
 {
     
-   $radio = new Checkbox('checkbox[]', $i);
+   $radio = new CheckboxForm('checkbox[]', $i);
    $radio->checked(2);
 
-   $label = new Label(
+   $label = new LabelForm(
        $radio->getElement() . 'Option ' . $i
    );
 

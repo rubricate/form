@@ -5,7 +5,7 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-class Label implements IGetElement
+class LabelForm implements IGetElement
 {
     private $e;
     
@@ -15,6 +15,8 @@ class Label implements IGetElement
         $this->e->addInnerText($labelName);
     }
 
+
+
     public function setAttribute($property, $value)
     {
         $this->e->setAttribute($property, $value);
@@ -23,13 +25,13 @@ class Label implements IGetElement
     } 
 
 
+
     public function addInnerText($inner)
     {
         $this->e->addInnerText($inner);
 
         return $this;
     } 
-
 
 
 
@@ -47,6 +49,7 @@ class Label implements IGetElement
         return $this->e->getElement();
     } 
     
+
     
 }
 

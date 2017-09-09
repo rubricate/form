@@ -5,12 +5,10 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-class Input implements IGetElement
+class InputForm implements IGetElement
 {
 
     private $e;
-
-
 
 
 
@@ -24,8 +22,6 @@ class Input implements IGetElement
 
 
 
-
-
     public function setAttribute($name, $value = NULL)
     {
         $this->e->setAttribute($name, $value);
@@ -35,14 +31,10 @@ class Input implements IGetElement
 
 
 
-
-
     public function getElement()
     {
       return  $this->e->getElement();
     } 
-
-
 
 
 

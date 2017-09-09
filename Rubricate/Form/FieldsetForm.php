@@ -5,12 +5,9 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
-
-class Fieldset implements IGetElement
+class FieldsetForm implements IGetElement
 {
     private $e;
-
-
 
 
     
@@ -27,16 +24,12 @@ class Fieldset implements IGetElement
 
 
 
-
-
     public function setAttribute($property, $value)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
-
-
 
 
 
@@ -49,8 +42,6 @@ class Fieldset implements IGetElement
 
 
 
-
-
     public function addInnerJoin(IGetElement $inner)
     {
         $this->e->addInnerJoin($inner);
@@ -60,13 +51,10 @@ class Fieldset implements IGetElement
 
 
 
-
-
     public function getElement()
     {
         return $this->e->getElement();
     } 
-    
     
     
     

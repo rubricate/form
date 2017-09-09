@@ -2,12 +2,10 @@
 
 namespace Rubricate\Form;
 
-
 use Rubricate\Element\IGetElement;
 use Rubricate\Element\CreateElement;
 
-
-class OptionGroup implements IGetElement
+class OptionGroupForm implements IGetElement
 {
     private $optGroup;
     
@@ -27,12 +25,11 @@ class OptionGroup implements IGetElement
 
 
 
-
     public function getElement()
     {
         return $this->optGroup->getElement();
     } 
-    
+
 
     
 }

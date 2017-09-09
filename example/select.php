@@ -2,10 +2,10 @@
 
 require '../vendor/autoload.php';
 
-use Rubricate\Form\Select;
+use Rubricate\Form\SelectForm;
 
 
-$select = new Select('latim');
+$select = new SelectForm('latim');
 $select->setAttribute('class', 'selectpicker');
 
 $opt[] = 'choose';
