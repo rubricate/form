@@ -19,7 +19,7 @@ class FieldsetForm implements IGetElement
         $legend   ->addInnerText($titleLegend);
         $fieldset ->addInnerText($legend);
 
-        $this->e = $element;
+        $this->e = $fieldset;
     }
 
 
