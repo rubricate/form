@@ -9,24 +9,56 @@ class CheckboxForm implements IGetElement
 {
 
     private $e;
+    private $name;
+    private $value;
+    private $property = array('type', 'name', 'value');
 
 
 
     public function __construct($name, $value = NULL)
     {
-        self::_setValue($value);
+        self::init($name, $value);
 
-        $this->e = new InputForm('checkbox', $name, $value);
+        $this->e = new InputForm('checkbox', self::getName(), self::getValue());
     }
 
 
 
-    public function setAttribute($name, $value = NULL)
+    private function init($name, $value)
     {
-        $this->e->setAttribute($name, $value);
+        $this->name  = $name;
+        $this->value = $value;
+    } 
+ 
+
+
+    public function setAttribute($property, $value = NULL)
+    {
+        if (in_array($property, $this->property)) {
+            throw new \Exception("the '{$property}' attribute is already set.\n");
+        }
+
+        $this->e->setAttribute($property, $value);
 
         return $this;
     } 
+
+
+
+    public function getName()
+    {
+        return $this->name;
+    } 
+    
+
+
+    public function getValue()
+    {
+        return $this->value;
+    } 
+    
+
+
 
 
 
@@ -39,11 +71,10 @@ class CheckboxForm implements IGetElement
 
     public function checked($checked)
     {
-        if(
-            ($this->_value !== NULL) && 
-            ($this->_value == $checked)
-        )
-        {
+        if (
+            (self::getValue() !== NULL) && 
+            (self::getValue() == $checked)
+        ) {
             $this->e->setAttribute('checked', 'checked');
         }
 
@@ -52,14 +83,5 @@ class CheckboxForm implements IGetElement
 
 
 
-    private function _setValue($value)
-    {
-        $this->_value = $value; 
-        return $this;
-    } 
-
-
-
 }
-
 

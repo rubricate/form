@@ -9,17 +9,31 @@ class SelectForm implements IGetElement
 {
     private $select;
     private $name;
-    private $optArr = array();
+    private $optArr   = array();
+    private $property = array('name');
 
 
 
     public function __construct($name)
     {
+        self::init($name);
+
         $this->select = new CreateElement('select');
-        $this->select->setAttribute('name', $name);
+        $this->select->setAttribute('name', self::getName());
         $this->select->addInnerText('');
     }
 
+    private function init($name)
+    {
+        $this->name = $name;
+    } 
+    
+
+    public function getName()
+    {
+        return $this->name;
+    } 
+    
 
 
     public function getElement()
@@ -31,6 +45,10 @@ class SelectForm implements IGetElement
 
     public function setAttribute($property, $value = NULL)
     {
+        if (in_array($property, $this->property)) {
+            throw new \Exception("the '{$property}' attribute is already set.\n");
+        }
+
         $this->select->setAttribute($property, $value);
 
         return $this;
