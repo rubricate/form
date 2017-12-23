@@ -6,8 +6,7 @@ use Rubricate\Form\LabelForm;
 use Rubricate\Form\RadioForm;
 
 
-for ($i = 1; $i <= 3; $i++)
-{
+for ($i = 1; $i <= 3; $i++) {
     
    $radio = new RadioForm('optradio', $i);
    $radio->checked(2);

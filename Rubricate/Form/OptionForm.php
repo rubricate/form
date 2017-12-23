@@ -4,35 +4,57 @@ namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;;
+use Rubricate\Form\Active\ValueActiveForm;
 
 class OptionForm implements IGetElement
 {
-    private $optArr = array();
+    private $optArr, $e;
+    private $value;
+    private $result = array();
 
 
 
-    public function __construct(array $optionArr, $selected = NULL)
+    public function __construct(array $optArr, $selected = NULL)
     {
-        foreach ($optionArr as $value => $description)
-        {
-            $opt = new CreateElement('option');
-            $opt->setAttribute('value', $value);
-            $opt->addInnerText($description);
-
-            if(!is_null($selected) && $selected == $value) 
-            {
-                $opt->setAttribute('selected', 'selected');
-            }
-
-            $this->optArr[] = $opt->getElement();
-        }
+        $this->optArr = $optArr;
+        $this->value  = $selected;
     }
 
 
 
     public function getElement()
     {
-        return implode('', $this->optArr);
+        self::optList();
+
+        return implode('', $this->result);
+    } 
+
+
+
+    private function optList()
+    {
+        foreach ($this->optArr as $value => $description)
+        {
+            $this->e = new CreateElement('option');
+
+            $this->e->setAttribute('value', $value);
+            $this->e->addInnerText($description);
+
+            self::setSelected($value);
+
+            $this->result[] = $this->e->getElement();
+        } 
+    } 
+
+
+
+    private function setSelected($value)
+    {
+        $a = new ValueActiveForm($this->value, $this->e);
+        $a->setActive('selected', $value);
+
+        return $this;
+
     } 
 
 

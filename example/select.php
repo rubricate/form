@@ -5,24 +5,49 @@ require '../vendor/autoload.php';
 use Rubricate\Form\SelectForm;
 
 
-$select = new SelectForm('latim');
-$select->setAttribute('class', 'selectpicker');
+$select1 = new SelectForm('latim');
+$select2 = new SelectForm('latim2');
 
-$opt[] = 'choose';
-$opt[] = 'lorem';
-$opt[] = 'ipsum';
-$opt[] = 'dolor';
+$select1->setAttribute('class', 'selectpicker');
+$select2->setAttribute('class', 'selectpicker');
 
-$select->addOptions($opt);
+$opt1[] = 'choose';
+$opt1[] = 'lorem';
+$opt1[] = 'ipsum';
+$opt1[] = 'dolor';
+
+$opt2[] = 'liquam';
+$opt2[] = 'incidunt';
+$opt2[] = 'igula';
+$opt2[] = 'ulla';
+
+$select1->addOptions($opt1);
+$select2->addOptionsGroup('name here', $opt2);
     
-echo $select->getElement();
+echo 'select : <br />';
+echo $select1->getElement();
+
+echo '<br />';
+echo '<br />';
+
+echo 'select Group: <br />';
+echo $select2->getElement();
 
 /*
-<select class="selectpicker">
+<select name="latim" class="selectpicker">
   <option value="0">choose</option>
   <option value="1">lorem</option>
   <option value="2">ipsum</option>
   <option value="3">dolor</option>
+</select>
+
+<select name="latim2" class="selectpicker">
+    <optgroup label="name here">
+        <option value="0">liquam</option>
+        <option value="1">incidunt</option>
+        <option value="2">igula</option>
+        <option value="3">ulla</option>
+    </optgroup>
 </select>
 
 */

@@ -7,27 +7,23 @@ use Rubricate\Element\CreateElement;
 
 class OptionGroupForm implements IGetElement
 {
-    private $optGroup;
+    private $e;
+
     
-    public function __construct(
-        $label, array $optionArr, $selected = NULL
-    )
+
+    public function __construct($label, array $optionArr, $selected = NULL)
     {
-       $option = new Option($optionArr, $selected);
-       $group  = new CreateElement('optgroup');
+       $this->e  = new CreateElement('optgroup');
 
-       $group->setAttribute('label', $label);
-       $group->addInner($option);
-
-       $this->optGroup = $group;
-
+       $this->e->setAttribute('label', $label);
+       $this->e->addInnerJoin(new OptionForm($optionArr, $selected));
     }
 
 
 
     public function getElement()
     {
-        return $this->optGroup->getElement();
+        return $this->e->getElement();
     } 
 
 

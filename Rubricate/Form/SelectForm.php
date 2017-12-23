@@ -3,42 +3,42 @@
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
-use Rubricate\Element\IGetElement;
 
-class SelectForm implements IGetElement
+class SelectForm implements IElementForm
 {
-    private $select;
-    private $name;
-    private $optArr   = array();
+    private $e, $a;
     private $property = array('name');
 
 
 
     public function __construct($name)
     {
-        self::init($name);
+        $this->e = new CreateElement('select');
+        $this->a = new NameValueAttrForm($name, NULL);
 
-        $this->select = new CreateElement('select');
-        $this->select->setAttribute('name', self::getName());
-        $this->select->addInnerText('');
+        $this->e->setAttribute('name', self::getName());
+        $this->e->addInnerText('');
     }
 
-    private function init($name)
-    {
-        $this->name = $name;
-    } 
-    
+
 
     public function getName()
     {
-        return $this->name;
+        return $this->a->getName();
+    } 
+
+
+
+    public function getValue()
+    {
+        return $this->a->getValue();
     } 
     
 
 
     public function getElement()
     {
-        return $this->select->getElement();
+        return $this->e->getElement();
     } 
 
 
@@ -46,10 +46,13 @@ class SelectForm implements IGetElement
     public function setAttribute($property, $value = NULL)
     {
         if (in_array($property, $this->property)) {
-            throw new \Exception("the '{$property}' attribute is already set.\n");
+            throw new \Exception(''
+                . "the '{$property}' attribute is already set."
+                ."\n"
+            );
         }
 
-        $this->select->setAttribute($property, $value);
+        $this->e->setAttribute($property, $value);
 
         return $this;
     } 
@@ -59,23 +62,17 @@ class SelectForm implements IGetElement
     public function addOptions($optArr, $selected = NULL)
     {
         $opt = new OptionForm($optArr, $selected);
-        $this->select->addInnerJoin($opt);
+        $this->e->addInnerJoin($opt);
 
         return $this;
     } 
 
 
 
-
     public function addOptionsGroup($label, $optArr, $selected = NULL)
     {
-        $group = new CreateElement('optgroup');
-        $opt   = new OptionForm($optArr, $selected);
-
-        $group->setAttribute('label', $label);
-        $group->addInnerJoin($opt);
-
-        $this->select->addInnerJoin($group);
+        $group = new OptionGroupForm($label, $optArr, $selected);
+        $this->e->addInnerJoin($group);
 
         return $this;
     } 
