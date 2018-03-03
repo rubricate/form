@@ -14,7 +14,7 @@ class SelectForm implements IElementForm
     public function __construct($name)
     {
         $this->e = new CreateElement('select');
-        $this->a = new NameValueAttrForm($name, NULL);
+        $this->a = new NameValueAttrForm($name, null);
 
         $this->e->setAttribute('name', self::getName());
         $this->e->addInnerText('');
@@ -43,10 +43,11 @@ class SelectForm implements IElementForm
 
 
 
-    public function setAttribute($property, $value = NULL)
+    public function setAttribute($property, $value = null)
     {
         if (in_array($property, $this->property)) {
-            throw new \Exception(''
+            throw new \Exception(
+                ''
                 . "the '{$property}' attribute is already set."
                 ."\n"
             );
@@ -59,7 +60,7 @@ class SelectForm implements IElementForm
 
 
 
-    public function addOptions($optArr, $selected = NULL)
+    public function addOptions($optArr, $selected = null)
     {
         $opt = new OptionForm($optArr, $selected);
         $this->e->addInnerJoin($opt);
@@ -69,7 +70,7 @@ class SelectForm implements IElementForm
 
 
 
-    public function addOptionsGroup($label, $optArr, $selected = NULL)
+    public function addOptionsGroup($label, $optArr, $selected = null)
     {
         $group = new OptionGroupForm($label, $optArr, $selected);
         $this->e->addInnerJoin($group);

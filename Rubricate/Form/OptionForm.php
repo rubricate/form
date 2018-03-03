@@ -14,7 +14,7 @@ class OptionForm implements IGetElement
 
 
 
-    public function __construct(array $optArr, $selected = NULL)
+    public function __construct(array $optArr, $selected = null)
     {
         $this->optArr = $optArr;
         $this->value  = $selected;

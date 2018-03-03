@@ -13,17 +13,18 @@ class RadioForm implements IElementForm
 
 
 
-    public function __construct($name, $value = NULL)
+    public function __construct($name, $value = null)
     {
         $this->e = new InputForm('radio', $name, $value);
     }
 
 
 
-    public function setAttribute($property, $value = NULL)
+    public function setAttribute($property, $value = null)
     {
         if (in_array($property, $this->property)) {
-            throw new \Exception(''
+            throw new \Exception(
+                ''
                 . "the '{$property}' attribute is already set."
                 ."\n"
             );

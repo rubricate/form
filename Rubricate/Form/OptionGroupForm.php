@@ -11,12 +11,12 @@ class OptionGroupForm implements IGetElement
 
     
 
-    public function __construct($label, array $optionArr, $selected = NULL)
+    public function __construct($label, array $optionArr, $selected = null)
     {
-       $this->e  = new CreateElement('optgroup');
+        $this->e  = new CreateElement('optgroup');
 
-       $this->e->setAttribute('label', $label);
-       $this->e->addInnerJoin(new OptionForm($optionArr, $selected));
+        $this->e->setAttribute('label', $label);
+        $this->e->addInnerJoin(new OptionForm($optionArr, $selected));
     }
 
 

@@ -11,7 +11,7 @@ class TextareaForm implements IElementForm
 
 
 
-    public function __construct($name, $value = NULL)
+    public function __construct($name, $value = null)
     {
         $this->e = new CreateElement('textarea');
         $this->a = new NameValueAttrForm($name, $value);
@@ -25,7 +25,8 @@ class TextareaForm implements IElementForm
     public function setAttribute($property, $value)
     {
         if (in_array($property, $this->property)) {
-            throw new \Exception(''
+            throw new \Exception(
+                ''
                 . "the '{$property}' attribute is already set."
                 ."\n"
             );

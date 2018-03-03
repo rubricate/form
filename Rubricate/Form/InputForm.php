@@ -13,7 +13,7 @@ class InputForm implements IElementForm, ISetAttributeElement
     
     
 
-    public function __construct($type, $name, $value = NULL)
+    public function __construct($type, $name, $value = null)
     {
         $this->e = new CreateElement('input');
         $this->a = new NameValueAttrForm($name, $value);
@@ -25,10 +25,11 @@ class InputForm implements IElementForm, ISetAttributeElement
 
 
 
-    public function setAttribute($property, $value = NULL)
+    public function setAttribute($property, $value = null)
     {
         if (in_array($property, $this->property)) {
-            throw new \Exception(''
+            throw new \Exception(
+                ''
                 . "the '{$property}' attribute is already set."
                 ."\n"
             );

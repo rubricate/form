@@ -8,16 +8,16 @@ use Rubricate\Form\RadioForm;
 
 for ($i = 1; $i <= 3; $i++) {
     
-   $radio = new RadioForm('optradio', $i);
-   $radio->checked(2);
+    $radio = new RadioForm('optradio', $i);
+    $radio->checked(2);
 
-   $label = new LabelForm(
-       $radio->getElement() . 'Option ' . $i
-   );
+    $label = new LabelForm(
+        $radio->getElement() . 'Option ' . $i
+    );
 
-   echo $label->getElement();
-   echo '<br />';
-   echo PHP_EOL;
+    echo $label->getElement();
+    echo '<br />';
+    echo PHP_EOL;
 
 }    
 
