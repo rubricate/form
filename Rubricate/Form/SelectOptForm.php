@@ -3,22 +3,25 @@
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
-use Rubricate\Element\IGetElement;
 
-class SelectForm implements IElementForm
+class SelectOptForm implements IElementForm
 {
     private $e, $a;
     private $property = array('name');
 
 
 
-    public function __construct($name)
+    public function __construct($name, $optArr, $selected = null)
     {
         $this->e = new CreateElement('select');
         $this->a = new NameValueAttrForm($name, null);
 
         $this->e->setAttribute('name', self::getName());
         $this->e->addInnerText('');
+
+        $opt =  new OptionForm($optArr, $selected) ;
+
+        $this->e->addInnerJoin($opt);
     }
 
 
@@ -34,7 +37,7 @@ class SelectForm implements IElementForm
     {
         return $this->a->getValue();
     } 
-
+    
 
 
     public function getElement()
@@ -58,13 +61,6 @@ class SelectForm implements IElementForm
 
         return $this;
     } 
-
-
-    public function addInnerJoin(IGetElement $inner)
-    {
-        $this->e->addInnerJoin($inner);
-    } 
-
 
 
 

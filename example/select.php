@@ -3,6 +3,8 @@
 require '../vendor/autoload.php';
 
 use Rubricate\Form\SelectForm;
+use Rubricate\Form\OptionForm;
+use Rubricate\Form\OptionGroupForm;
 
 
 $select1 = new SelectForm('latim');
@@ -21,8 +23,8 @@ $opt2[] = 'incidunt';
 $opt2[] = 'igula';
 $opt2[] = 'ulla';
 
-$select1->addOptions($opt1);
-$select2->addOptionsGroup('name here', $opt2);
+$select1->addInnerJoin(new OptionForm($opt1));
+$select2->addInnerJoin(new OptionGroupForm('name here', $opt2));
     
 echo 'select : <br />';
 echo $select1->getElement();
