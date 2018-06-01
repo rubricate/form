@@ -6,13 +6,13 @@ use Rubricate\Form\SelectOptForm;
 use Rubricate\Form\SelectOptGroupForm;
 
 
-$opt1[] = 'choose';
-$opt1[] = 'lorem';
-$opt1[] = 'ipsum';
-$opt1[] = 'dolor';
+$opt[] = 'choose';
+$opt[] = 'lorem';
+$opt[] = 'ipsum';
+$opt[] = 'dolor';
 
 
-$select = new SelectOptGroupForm('latim', $opt);
+$select = new SelectOptForm('latim', $opt);
 
 /*
 // OR 3 arguments 'selected'
