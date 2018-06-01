@@ -4,68 +4,39 @@ namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
 
-class SelectOptGroupForm implements IElementForm
+class SelectOptGroupForm extends AbstractSelectForm
 {
-    private $e, $a;
-    private $property = array('name');
+    private $optArr, $selected;
 
 
 
-    public function __construct($name, $optGroupArr, $selected = null)
+    public function __construct($name, $optArr, $selected = null)
     {
-        $this->e = new CreateElement('select');
-        $this->a = new NameValueAttrForm($name, null);
-
-        $this->e->setAttribute('name', self::getName());
-        $this->e->addInnerText('');
-
-        foreach ($optGroupArr as $label => $optArr) {
-
-            $opt =  new OptionGroupForm($label, $optArr, $selected) ;
-
-            $this->e->addInnerJoin($opt);
-        }
-
+        self::init($optArr, $selected);
+        parent::__construct($name);
     }
 
 
 
-    public function getName()
+    private function init($optArr, $selected)
     {
-        return $this->a->getName();
+        $this->optArr   = $optArr;
+        $this->selected = $selected;
     } 
 
 
 
-    public function getValue()
+    protected function optionList()
     {
-        return $this->a->getValue();
+        foreach ($this->optArr as $label => $opt) {
+
+            $this->getSelect()->addInnerJoin(
+                new OptionGroupForm(
+                    $label, $opt, $this->selected
+                ));
+        } 
+
     } 
-
-
-
-    public function getElement()
-    {
-        return $this->e->getElement();
-    } 
-
-
-
-    public function setAttribute($property, $value = null)
-    {
-        if (in_array($property, $this->property)) {
-            throw new \Exception(
-                ''
-                . "the '{$property}' attribute is already set."
-                ."\n"
-            );
-        }
-
-        $this->e->setAttribute($property, $value);
-
-        return $this;
-    } 
-
 
 
 
