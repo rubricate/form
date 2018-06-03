@@ -8,9 +8,7 @@ use Rubricate\Form\Active\ValueActiveForm;
 
 class OptionForm implements IGetElement
 {
-    private $optArr, $e;
-    private $value;
-    private $result = array();
+    private $e, $optArr, $value; $result = array();
 
 
 

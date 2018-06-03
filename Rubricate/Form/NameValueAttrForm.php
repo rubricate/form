@@ -4,8 +4,11 @@ namespace Rubricate\Form;
 
 class NameValueAttrForm implements INameValueAttrForm
 {
+
     private $name;
     private $value;
+
+
     
     public function __construct($name, $value)
     {
@@ -19,6 +22,8 @@ class NameValueAttrForm implements INameValueAttrForm
     {
         return $this->name;
     }
+
+
 
     public function getValue()   
     {

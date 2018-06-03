@@ -5,10 +5,15 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
+
+
 class LabelForm implements IGetElement
 {
+
     private $e;
     
+
+
     public function __construct($labelName)
     {
         $this->e = new CreateElement('label');
