@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Rubricate\Form;
 
@@ -30,7 +30,7 @@ class SelectOptGroupForm extends AbstractSelectForm
     {
         foreach ($this->optArr as $label => $opt) {
 
-            $this->getSelect()->addInnerJoin(
+            $this->select->addInnerJoin(
                 new OptionGroupForm(
                     $label, $opt, $this->selected
                 ));

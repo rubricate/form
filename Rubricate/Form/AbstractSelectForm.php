@@ -1,14 +1,16 @@
-<?php 
+<?php
 
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
+
+
 abstract class AbstractSelectForm implements IElementForm
 {
-    private $select;
-    private $a, $property = array('name');
+    protected $select;
+    private   $attr;
 
 
 
@@ -22,7 +24,7 @@ abstract class AbstractSelectForm implements IElementForm
     private function init($name)
     {
         $this->select = new CreateElement('select');
-        $this->a = new NameValueAttrForm($name, null);
+        $this->attr   = new AttrForm($this->select, $name, null);
 
         $this->select->setAttribute('name', self::getName());
 
@@ -34,23 +36,17 @@ abstract class AbstractSelectForm implements IElementForm
     abstract protected function optionList();
 
 
-    protected function getSelect()
-    {
-       return  $this->select;
-    } 
-
-
 
     public function getName()
     {
-        return $this->a->getName();
+        return $this->attr->getName();
     } 
 
 
 
     public function getValue()
     {
-        return $this->a->getValue();
+        return $this->attr->getValue();
     } 
 
 
@@ -64,19 +60,10 @@ abstract class AbstractSelectForm implements IElementForm
 
     public function setAttribute($property, $value = null)
     {
-        if (in_array($property, $this->property)) {
-            throw new \Exception(
-                ''
-                . "the '{$property}' attribute is already set."
-                ."\n"
-            );
-        }
-
-        $this->select->setAttribute($property, $value);
+        $this->attr->setAttribute($property, $value);
 
         return $this;
     } 
-
 
 
 

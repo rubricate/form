@@ -1,15 +1,14 @@
-<?php 
+<?php
 
 namespace Rubricate\Form;
 
 use Rubricate\Form\Active\ValueActiveForm;
 
 
+
 class RadioForm implements IElementForm
 {
-
     private $e;
-    private $property = array('type', 'name', 'value');
 
 
 
@@ -22,14 +21,6 @@ class RadioForm implements IElementForm
 
     public function setAttribute($property, $value = null)
     {
-        if (in_array($property, $this->property)) {
-            throw new \Exception(
-                ''
-                . "the '{$property}' attribute is already set."
-                ."\n"
-            );
-        }
-
         $this->e->setAttribute($property, $value);
 
         return $this;
@@ -65,7 +56,6 @@ class RadioForm implements IElementForm
 
         return $this;
     } 
-
 
 
 

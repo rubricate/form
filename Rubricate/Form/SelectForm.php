@@ -5,6 +5,8 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
 
+
+
 class SelectForm extends AbstractSelectForm
 {
 
@@ -16,17 +18,16 @@ class SelectForm extends AbstractSelectForm
 
 
 
-
     public function addInnerJoin(IGetElement $inner)
     {
-        parent::getSelect()->addInnerJoin($inner);
+        $this->select->addInnerJoin($inner);
     } 
 
 
 
     protected function optionList()
     {
-        parent::getSelect()->addInnerText('');
+        $this->select->addInnerText('');
     } 
 
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Rubricate\Form;
 
@@ -28,7 +28,7 @@ class SelectOptForm extends AbstractSelectForm
     protected function optionList()
     {
 
-        $this->getSelect()->addInnerJoin(
+        $this->select->addInnerJoin(
             new OptionForm(
                 $this->optArr, $this->selected
             ));

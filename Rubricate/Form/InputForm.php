@@ -5,6 +5,8 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\ISetAttributeElement;
 
+
+
 class InputForm implements IElementForm, ISetAttributeElement
 {
 
@@ -16,7 +18,7 @@ class InputForm implements IElementForm, ISetAttributeElement
     public function __construct($type, $name, $value = null)
     {
         $this->e = new CreateElement('input');
-        $this->a = new NameValueAttrForm($name, $value);
+        $this->a = new AttrForm($this->e, $name, $value, $this->property);
 
         $this->e->setAttribute('type',  $type);
         $this->e->setAttribute('name',  self::getName());
@@ -27,15 +29,7 @@ class InputForm implements IElementForm, ISetAttributeElement
 
     public function setAttribute($property, $value = null)
     {
-        if (in_array($property, $this->property)) {
-            throw new \Exception(
-                ''
-                . "the '{$property}' attribute is already set."
-                ."\n"
-            );
-        }
-
-        $this->e->setAttribute($property, $value);
+        $this->a->setAttribute($property, $value);
 
         return $this;
     } 
