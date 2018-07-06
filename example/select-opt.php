@@ -17,7 +17,7 @@ $select = new SelectOptForm('latim', $opt);
 /*
 // OR 3 arguments 'selected'
 
-$select = new SelectOptGroupForm('latim', $opt, 2);
+$select = new SelectOptForm('latim', $opt, 2);
 */
 $select->setAttribute('class', 'selectpicker');
 
