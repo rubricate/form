@@ -5,6 +5,7 @@ namespace Rubricate\Form;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;;
 use Rubricate\Form\Active\ValueActiveForm;
+use Rubricate\Element\StrElement;
 
 class OptionForm implements IGetElement
 {
@@ -36,7 +37,7 @@ class OptionForm implements IGetElement
             $this->e = new CreateElement('option');
 
             $this->e->setAttribute('value', $value);
-            $this->e->addInnerText($description);
+            $this->e->addChild(new StrElement($description));
 
             self::setSelected($value);
 

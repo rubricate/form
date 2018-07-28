@@ -30,7 +30,7 @@ class SelectOptGroupForm extends AbstractSelectForm
     {
         foreach ($this->optArr as $label => $opt) {
 
-            $this->select->addInnerJoin(
+            $this->select->addChild(
                 new OptionGroupForm(
                     $label, $opt, $this->selected
                 ));

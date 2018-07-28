@@ -23,8 +23,8 @@ $opt2[] = 'incidunt';
 $opt2[] = 'igula';
 $opt2[] = 'ulla';
 
-$select1->addInnerJoin(new OptionForm($opt1));
-$select2->addInnerJoin(new OptionGroupForm('name here', $opt2));
+$select1->addChild(new OptionForm($opt1));
+$select2->addChild(new OptionGroupForm('name here', $opt2));
     
 echo 'select : <br />';
 echo $select1->getElement();

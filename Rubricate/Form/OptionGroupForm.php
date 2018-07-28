@@ -18,7 +18,7 @@ class OptionGroupForm implements IGetElement
         $this->e  = new CreateElement('optgroup');
 
         $this->e->setAttribute('label', $label);
-        $this->e->addInnerJoin(new OptionForm($optionArr, $selected));
+        $this->e->addChild(new OptionForm($optionArr, $selected));
     }
 
 

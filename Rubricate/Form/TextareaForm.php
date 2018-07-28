@@ -3,6 +3,7 @@
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
+use Rubricate\Element\StrElement;
 
 
 
@@ -18,7 +19,7 @@ class TextareaForm implements IElementForm
         $this->a = new AttrForm($this->e, $name, $value);
 
         $this->e->setAttribute('name', self::getName());
-        $this->e->addInnerText(self::getValue());
+        $this->e->addChild(new StrElement(self::getValue()));
     }
 
 

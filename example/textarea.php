@@ -23,8 +23,8 @@ $lab->setAttribute('for', 'message');
 $msg->setAttribute('class', 'message');
 $msg->setAttribute('id', 'message');
 
-$div->addInnerJoin($lab);
-$div->addInnerJoin($msg);
+$div->addChild($lab);
+$div->addChild($msg);
 
 echo $div->getElement();
 

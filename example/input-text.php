@@ -16,8 +16,8 @@ $grp->setAttribute('class', 'form-group');
 $lab->setAttribute('for', 'usr');
 $usr->setAttribute('id', 'usr');
 
-$grp->addInnerJoin($lab);
-$grp->addInnerJoin($usr);
+$grp->addChild($lab);
+$grp->addChild($usr);
 
 echo $grp->getElement();
 

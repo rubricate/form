@@ -28,7 +28,7 @@ class SelectOptForm extends AbstractSelectForm
     protected function optionList()
     {
 
-        $this->select->addInnerJoin(
+        $this->select->addChild(
             new OptionForm(
                 $this->optArr, $this->selected
             ));

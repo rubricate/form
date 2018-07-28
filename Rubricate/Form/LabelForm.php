@@ -4,6 +4,7 @@ namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
+use Rubricate\Element\StrElement;
 
 
 
@@ -17,7 +18,7 @@ class LabelForm implements IGetElement
     public function __construct($labelName)
     {
         $this->e = new CreateElement('label');
-        $this->e->addInnerText($labelName);
+        $this->e->addChild(new StrElement($labelName));
     }
 
 
@@ -31,18 +32,9 @@ class LabelForm implements IGetElement
 
 
 
-    public function addInnerText($inner)
+    public function addChild(IGetElement $inner)
     {
-        $this->e->addInnerText($inner);
-
-        return $this;
-    } 
-
-
-
-    public function addInnerJoin(IGetElement $inner)
-    {
-        $this->e->addInnerJoin($inner);
+        $this->e->addChild($inner);
 
         return $this;
     } 
