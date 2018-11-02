@@ -21,7 +21,7 @@ class FieldsetForm implements IGetElement
         $legend   = new CreateElement('legend');
 
         $legend   ->addChild(new StrElement($titleLegend));
-        $fieldset ->addChild(new StrElement($legend));
+        $fieldset ->addChild($legend);
 
         $this->e = $fieldset;
     }
