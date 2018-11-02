@@ -4,6 +4,7 @@ namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\IGetElement;
+use Rubricate\Element\StrElement;
 
 
 
@@ -19,8 +20,8 @@ class FieldsetForm implements IGetElement
         $fieldset = new CreateElement('fieldset');
         $legend   = new CreateElement('legend');
 
-        $legend   ->addInnerText($titleLegend);
-        $fieldset ->addInnerJoin($legend);
+        $legend   ->addChild(new StrElement($titleLegend));
+        $fieldset ->addChild(new StrElement($legend));
 
         $this->e = $fieldset;
     }
@@ -36,18 +37,9 @@ class FieldsetForm implements IGetElement
 
 
 
-    public function addInnerText($text)
+    public function addChild(IGetElement $inner)
     {
-        $this->e->addInnerText($text);
-
-        return $this;
-    } 
-
-
-
-    public function addInnerJoin(IGetElement $inner)
-    {
-        $this->e->addInnerJoin($inner);
+        $this->e->addChild($inner);
 
         return $this;
     } 
