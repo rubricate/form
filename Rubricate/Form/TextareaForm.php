@@ -18,8 +18,8 @@ class TextareaForm implements IElementForm
         $this->e = new CreateElement('textarea');
         $this->a = new AttrForm($this->e, $name, $value);
 
-        $this->e->setAttribute('name', self::getName());
-        $this->e->addChild(new StrElement(self::getValue()));
+        $this->e->setAttribute('name', $name);
+        $this->e->addChild(new StrElement($value));
     }
 
 
@@ -36,13 +36,6 @@ class TextareaForm implements IElementForm
     public function getName()
     {
         return $this->a->getName();
-    } 
-
-
-
-    public function getValue()
-    {
-        return $this->a->getValue();
     } 
 
 

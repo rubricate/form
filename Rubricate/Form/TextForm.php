@@ -29,13 +29,6 @@ class TextForm implements IElementForm
     {
         return $this->e->getName();
     } 
-    
-
-
-    public function getValue()
-    {
-        return $this->e->getValue();
-    } 
  
 
 

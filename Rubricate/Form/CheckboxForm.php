@@ -9,13 +9,14 @@ use Rubricate\Form\Active\ValueActiveForm;
 class CheckboxForm implements IElementForm
 {
 
-    private $e;
+    private $e, $value;
 
 
 
     public function __construct($name, $value = null)
     {
-        $this->e = new InputForm('checkbox', $name, $value);
+        $this->e     = new InputForm('checkbox', $name, $value);
+        $this->value = $value;
     }
 
 
@@ -36,13 +37,6 @@ class CheckboxForm implements IElementForm
     
 
 
-    public function getValue()
-    {
-        return $this->e->getValue();
-    } 
-
-
-
     public function getElement()
     {
         return  $this->e->getElement();
@@ -52,7 +46,7 @@ class CheckboxForm implements IElementForm
 
     public function checked($value)
     {
-        $checked = new ValueActiveForm(self::getValue(), $this->e);
+        $checked = new ValueActiveForm($this->value, $this->e);
         $checked->setActive('checked', $value);
 
         return $this;

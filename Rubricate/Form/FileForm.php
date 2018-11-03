@@ -35,13 +35,6 @@ class FileForm implements IElementForm
     
 
 
-    public function getValue()
-    {
-        return $this->e->getValue();
-    } 
- 
-
-
     public function getElement()
     {
         return  $this->e->getElement();

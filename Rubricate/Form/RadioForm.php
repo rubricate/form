@@ -8,13 +8,14 @@ use Rubricate\Form\Active\ValueActiveForm;
 
 class RadioForm implements IElementForm
 {
-    private $e;
+    private $e, $value;
 
 
 
     public function __construct($name, $value = null)
     {
-        $this->e = new InputForm('radio', $name, $value);
+        $this->e     = new InputForm('radio', $name, $value);
+        $this->value = $value;
     }
 
 
@@ -32,13 +33,6 @@ class RadioForm implements IElementForm
     {
         return $this->e->getName();
     } 
-    
-
-
-    public function getValue()
-    {
-        return $this->e->getValue();
-    } 
  
 
 
@@ -51,7 +45,7 @@ class RadioForm implements IElementForm
 
     public function checked($value)
     {
-        $checked = new ValueActiveForm(self::getValue(), $this->e);
+        $checked = new ValueActiveForm($this->value, $this->e);
         $checked->setActive('checked', $value);
 
         return $this;
