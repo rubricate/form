@@ -5,3 +5,7 @@ Form HTML
 ```
 $ composer require rubricate/form
 ```
+
+- Documentation is at https://rubricate.github.io/components/form
+
+
