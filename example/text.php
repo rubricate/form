@@ -6,25 +6,23 @@ use Rubricate\Form\TextForm;
 use Rubricate\Form\LabelForm;
 use Rubricate\Element\CreateElement;
 
-
-
-$grp = new CreateElement('div');
+$div = new CreateElement('div');
 $lab = new LabelForm('First Name:');
-$usr = new TextForm('firstName', 'john');
+$txt = new TextForm('firstName', 'john');
 
-$grp->setAttribute('class', 'form-group');
-$lab->setAttribute('for', 'usr');
-$usr->setAttribute('id', 'usr');
+$div->setAttribute('class', 'form-group');
+$lab->setAttribute('for', 'firstName');
+$txt->setAttribute('id', 'firstName');
 
-$grp->addChild($lab);
-$grp->addChild($usr);
+$div->addChild($lab);
+$div->addChild($txt);
 
-echo $grp->getElement();
+echo $div->getElement();
 
 /*
 <div class="form-group">
-  <label for="usr">Name:</label>
-  <input type="text" class="form-control" id="usr">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" value="john" id="firstName" />
 </div>
 */
 

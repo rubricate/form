@@ -7,12 +7,9 @@ use Rubricate\Form;
 $b = new Form\ButtonForm('ok');
 $b->setAttribute('class', 'btn');
 
-
-
 echo $b->getElement();
 
-
-
-
-
+/*
+ <button class="btn">ok</button>
+*/
 

@@ -16,8 +16,6 @@ for ($i = 1; $i <= 3; $i++) {
     );
 
     echo $label->getElement();
-    echo '<br />';
-    echo PHP_EOL;
 
 }    
 
@@ -26,18 +24,12 @@ for ($i = 1; $i <= 3; $i++) {
     <input type="radio" name="optradio" value="1" />
     Option 1
 </label>
-<br />
-
 <label>
     <input type="radio" name="optradio" value="2" checked="checked" />
     Option 2
 </label>
-<br />
-
 <label>
     <input type="radio" name="optradio" value="3" />
     Option 3
 </label>
-<br />
-
 */ 

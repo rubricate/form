@@ -22,11 +22,10 @@ $select = new SelectOptGroupForm('latim', $opt);
 $select->setAttribute('class', 'selectpicker');
 
 
-echo 'select : <br />';
 echo $select->getElement();
 
 /*
-    <select name="latim" class="selectpicker">
+<select name="latim" class="selectpicker">
     <optgroup label="lorem">
         <option value="1">ipsum</option>
         <option value="2">dolor</option>
@@ -37,7 +36,6 @@ echo $select->getElement();
         <option value="5">ligula</option>
         <option value="6">nulla</option>
     </optgroup>
-    </select>
-
+</select>
 */
 

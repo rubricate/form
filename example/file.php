@@ -23,8 +23,8 @@ echo $grp->getElement();
 
 /*
 <div class="form-group">
-  <label for="file">Name:</label>
-  <input type="file" class="form-control" id="file">
+    <label for="image">image:</label>
+    <input type="file" name="image" value id="image" />
 </div>
 */
 

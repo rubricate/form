@@ -3,8 +3,6 @@
 require '../vendor/autoload.php';
 
 use Rubricate\Form\SelectOptForm;
-use Rubricate\Form\SelectOptGroupForm;
-
 
 $opt[] = 'choose';
 $opt[] = 'lorem';
@@ -19,20 +17,18 @@ $select = new SelectOptForm('latim', $opt);
 
 $select = new SelectOptForm('latim', $opt, 2);
 */
-$select->setAttribute('class', 'selectpicker');
+
+$select->setAttribute('class', 'sel_lorem');
 
 
-echo 'select : <br />';
 echo $select->getElement();
 
 /*
 <select name="latim" class="selectpicker">
-  <option value="0">choose</option>
-  <option value="1">lorem</option>
-  <option value="2">ipsum</option>
-  <option value="3">dolor</option>
+    <option value="0">choose</option>
+    <option value="1">lorem</option>
+    <option value="2">ipsum</option>
+    <option value="3">dolor</option>
 </select>
-
-
 */
 
