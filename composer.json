@@ -7,7 +7,17 @@
         }
     ],
     "require": {
+    "php": "^7.1",
      "rubricate/element": "^0.4"
+    },
+    "keywords": [
+        "rubricateframework",
+        "rubricatephp",
+        "html form"
+    ],
+    "support": {
+        "docs"   : "https://rubricate.github.io/components/form",
+        "source" : "https://github.com/rubricate/form"
     },
     "autoload": {
         "psr-4": {

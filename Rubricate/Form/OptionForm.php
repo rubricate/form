@@ -11,26 +11,20 @@ class OptionForm implements IGetElement
 {
     private $e, $optArr, $value, $result = array();
 
-
-
     public function __construct(array $optArr, $selected = null)
     {
         $this->optArr = $optArr;
         $this->value  = $selected;
     }
 
-
-
-    public function getElement()
+    public function getElement(): string
     {
         self::optList();
 
         return implode('', $this->result);
     } 
 
-
-
-    private function optList()
+    private function optList(): void
     {
         foreach ($this->optArr as $value => $description)
         {
@@ -45,18 +39,13 @@ class OptionForm implements IGetElement
         } 
     } 
 
-
-
-    private function setSelected($value)
+    private function setSelected($value): self
     {
         $a = new ValueActiveForm($this->value, $this->e);
         $a->setActive('selected', $value);
 
         return $this;
-
     } 
-
-
 
 }
 

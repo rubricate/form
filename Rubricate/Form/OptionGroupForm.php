@@ -5,13 +5,9 @@ namespace Rubricate\Form;
 use Rubricate\Element\IGetElement;
 use Rubricate\Element\CreateElement;
 
-
-
 class OptionGroupForm implements IGetElement
 {
     private $e;
-
-    
 
     public function __construct($label, array $optionArr, $selected = null)
     {
@@ -21,14 +17,10 @@ class OptionGroupForm implements IGetElement
         $this->e->addChild(new OptionForm($optionArr, $selected));
     }
 
-
-
-    public function getElement()
+    public function getElement(): string
     {
         return $this->e->getElement();
     } 
-
-
     
 }
 

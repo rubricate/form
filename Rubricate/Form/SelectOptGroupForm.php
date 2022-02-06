@@ -8,25 +8,19 @@ class SelectOptGroupForm extends AbstractSelectForm
 {
     private $optArr, $selected;
 
-
-
     public function __construct($name, $optArr, $selected = null)
     {
         self::init($optArr, $selected);
         parent::__construct($name);
     }
 
-
-
-    private function init($optArr, $selected)
+    private function init($optArr, $selected): void
     {
         $this->optArr   = $optArr;
         $this->selected = $selected;
     } 
 
-
-
-    protected function optionList()
+    protected function optionList(): void
     {
         foreach ($this->optArr as $label => $opt) {
 
@@ -35,10 +29,7 @@ class SelectOptGroupForm extends AbstractSelectForm
                     $label, $opt, $this->selected
                 ));
         } 
-
     } 
-
-
 
 }
 

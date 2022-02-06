@@ -4,39 +4,30 @@ namespace Rubricate\Form;
 
 use Rubricate\Element\ISetAttributeElement;
 
-
-
 class AttrForm implements INameValueAttrForm, ISetAttributeElement
 {
     private $attr, $form, $property;
 
-
-
-    public function __construct
-        (ISetAttributeElement $form, $name, $value, $property = array('name'))
-    {
+    public function __construct (
+        ISetAttributeElement $form, 
+        $name, $value, $property = array('name')
+    ){
         $this->attr     = new NameValueAttrForm($name, $value);
         $this->form     = $form;
         $this->property = $property;
     }
 
-
-
-    public function getName()    
+    public function getName(): string 
     {
         return $this->attr->getName();
     }
 
-
-
-    public function getValue()   
+    public function getValue(): string
     {
         return $this->attr->getValue();
     }
 
-
-
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): self
     {
         if (in_array($property, $this->property)) {
             throw new \Exception(
@@ -50,8 +41,6 @@ class AttrForm implements INameValueAttrForm, ISetAttributeElement
 
         return $this;
     } 
-
-
 
 }
 
