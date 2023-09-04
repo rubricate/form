@@ -14,14 +14,14 @@ class ButtonForm implements IGetElement
         $this->e->addChild(new StrElement($value));
     }
 
-    public function setAttribute($property, $value): self
+    public function setAttribute($property, $value)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return $this->e->getElement();
     } 

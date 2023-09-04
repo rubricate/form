@@ -18,19 +18,19 @@ class TextareaForm implements IElementForm
         $this->e->addChild(new StrElement($value));
     }
 
-    public function setAttribute($property, $value): void
+    public function setAttribute($property, $value)
     {
         $this->a->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName(): string
+    public function getName()
     {
         return $this->a->getName();
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return $this->e->getElement();
     } 

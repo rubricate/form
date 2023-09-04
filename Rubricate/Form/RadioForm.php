@@ -14,24 +14,24 @@ class RadioForm implements IElementForm
         $this->value = $value;
     }
 
-    public function setAttribute($property, $value = null): self
+    public function setAttribute($property, $value = null)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName(): string
+    public function getName()
     {
         return $this->e->getName();
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return  $this->e->getElement();
     } 
 
-    public function checked($value): self
+    public function checked($value)
     {
         $checked = new ValueActiveForm($this->value, $this->e);
         $checked->setActive('checked', $value);

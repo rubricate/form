@@ -13,12 +13,12 @@ class NameValueAttrForm implements INameValueAttrForm
         $this->value = $value;
     }
 
-    public function getName(): string 
+    public function getName()
     {
         return $this->name;
     }
 
-    public function getValue(): string
+    public function getValue()
     {
         return $this->value;
     }

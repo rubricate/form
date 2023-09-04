@@ -17,17 +17,17 @@ class AttrForm implements INameValueAttrForm, ISetAttributeElement
         $this->property = $property;
     }
 
-    public function getName(): string 
+    public function getName()
     {
         return $this->attr->getName();
     }
 
-    public function getValue(): string
+    public function getValue()
     {
         return $this->attr->getValue();
     }
 
-    public function setAttribute($property, $value = null): self
+    public function setAttribute($property, $value = null)
     {
         if (in_array($property, $this->property)) {
             throw new \Exception(

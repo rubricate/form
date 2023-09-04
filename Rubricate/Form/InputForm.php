@@ -21,19 +21,19 @@ class InputForm implements IElementForm, ISetAttributeElement
         $this->e->setAttribute('value', $value);
     }
 
-    public function setAttribute($property, $value = null): self
+    public function setAttribute($property, $value = null)
     {
         $this->a->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName(): string
+    public function getName()
     {
         return $this->a->getName();
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return  $this->e->getElement();
     } 

@@ -14,13 +14,13 @@ class SelectOptForm extends AbstractSelectForm
         parent::__construct($name);
     }
 
-    private function init($optArr, $selected): void
+    private function init($optArr, $selected)
     {
         $this->optArr   = $optArr;
         $this->selected = $selected;
     } 
 
-    protected function optionList(): void
+    protected function optionList()
     {
         $this->select->addChild(
             new OptionForm(

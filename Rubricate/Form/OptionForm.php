@@ -17,14 +17,14 @@ class OptionForm implements IGetElement
         $this->value  = $selected;
     }
 
-    public function getElement(): string
+    public function getElement()
     {
         self::optList();
 
         return implode('', $this->result);
     } 
 
-    private function optList(): void
+    private function optList()
     {
         foreach ($this->optArr as $value => $description)
         {
@@ -39,7 +39,7 @@ class OptionForm implements IGetElement
         } 
     } 
 
-    private function setSelected($value): self
+    private function setSelected($value)
     {
         $a = new ValueActiveForm($this->value, $this->e);
         $a->setActive('selected', $value);

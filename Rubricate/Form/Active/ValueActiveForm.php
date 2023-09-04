@@ -4,7 +4,6 @@ namespace Rubricate\Form\Active;
 
 use Rubricate\Element\ISetAttributeElement;
 
-
 class  ValueActiveForm
 {
     private $value, $elem;
@@ -14,8 +13,6 @@ class  ValueActiveForm
         $this->value = $value;
         $this->elem  = $elem;
     }
-
-
 
     public function setActive($nameAttr, $value)
     {
@@ -29,8 +26,6 @@ class  ValueActiveForm
         return $this;
 
     } 
-
-
 
 }
 

@@ -16,21 +16,21 @@ class LabelForm implements IGetElement
         $this->e->addChild(new StrElement($labelName));
     }
 
-    public function setAttribute($property, $value): self
+    public function setAttribute($property, $value)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function addChild(IGetElement $inner): self
+    public function addChild(IGetElement $inner)
     {
         $this->e->addChild($inner);
 
         return $this;
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return $this->e->getElement();
     } 

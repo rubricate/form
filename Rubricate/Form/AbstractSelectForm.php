@@ -15,7 +15,7 @@ abstract class AbstractSelectForm implements IElementForm
         self::init($name);
     }
 
-    private function init($name): void
+    private function init($name)
     {
         $this->select = new CreateElement('select');
         $this->attr   = new AttrForm($this->select, $name, null);
@@ -27,22 +27,22 @@ abstract class AbstractSelectForm implements IElementForm
 
     abstract protected function optionList();
 
-    public function getName(): string
+    public function getName()
     {
         return $this->attr->getName();
     } 
 
-    public function getValue(): void
+    public function getValue()
     {
         return $this->attr->getValue();
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return $this->select->getElement();
     } 
 
-    public function setAttribute($property, $value = null): void
+    public function setAttribute($property, $value = null)
     {
         $this->attr->setAttribute($property, $value);
 

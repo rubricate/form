@@ -11,19 +11,19 @@ class TextForm implements IElementForm
         $this->e = new InputForm('text', $name, $value);
     }
 
-    public function setAttribute($property, $value = null): self
+    public function setAttribute($property, $value = null)
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName(): string
+    public function getName()
     {
         return $this->e->getName();
     } 
 
-    public function getElement(): string
+    public function getElement()
     {
         return  $this->e->getElement();
     } 

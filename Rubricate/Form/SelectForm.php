@@ -13,12 +13,12 @@ class SelectForm extends AbstractSelectForm
         parent::__construct($name);
     }
 
-    public function addChild(IGetElement $inner): void
+    public function addChild(IGetElement $inner)
     {
         $this->select->addChild($inner);
     } 
 
-    protected function optionList(): void
+    protected function optionList()
     {
         $this->select->addChild(new StrElement(''));
     } 
