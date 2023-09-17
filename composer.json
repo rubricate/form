@@ -2,12 +2,13 @@
     "name": "rubricate/form",
     "authors": [
         {
-            "name": "Estefanio NS",
+            "name": "Estefanio N Santos",
             "email": "estefanions@gmail.com"
         }
     ],
     "require": {
-     "rubricate/element": "^1.0"
+     "php": ">=7.2",
+     "rubricate/element": "^2.2"
     },
     "keywords": [
         "rubricateframework",
@@ -24,3 +25,4 @@
         }
     }
 }
+
