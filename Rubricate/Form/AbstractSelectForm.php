@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -15,7 +17,7 @@ abstract class AbstractSelectForm implements IElementForm
         self::init($name);
     }
 
-    private function init($name)
+    private function init($name): void
     {
         $this->select = new CreateElement('select');
         $this->attr   = new AttrForm($this->select, $name, null);
@@ -27,22 +29,22 @@ abstract class AbstractSelectForm implements IElementForm
 
     abstract protected function optionList();
 
-    public function getName()
+    public function getName(): string
     {
         return $this->attr->getName();
     } 
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->attr->getValue();
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return $this->select->getElement();
     } 
 
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): object
     {
         $this->attr->setAttribute($property, $value);
 

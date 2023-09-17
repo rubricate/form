@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Form\Active\ValueActiveForm;
@@ -13,22 +15,21 @@ class FileForm implements IElementForm
         $this->e = new InputForm('file', $name);
     }
 
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): object
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName()
+    public function getName(): string
     {
         return $this->e->getName();
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return  $this->e->getElement();
     } 
-
 }
 

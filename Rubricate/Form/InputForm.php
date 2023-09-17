@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -21,19 +23,19 @@ class InputForm implements IElementForm, ISetAttributeElement
         $this->e->setAttribute('value', $value);
     }
 
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): object
     {
         $this->a->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName()
+    public function getName(): string
     {
         return $this->a->getName();
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return  $this->e->getElement();
     } 

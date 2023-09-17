@@ -1,11 +1,12 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 class NameValueAttrForm implements INameValueAttrForm
 {
-    private $name;
-    private $value;
+    private $name, $value;
     
     public function __construct($name, $value)
     {
@@ -13,12 +14,12 @@ class NameValueAttrForm implements INameValueAttrForm
         $this->value = $value;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }

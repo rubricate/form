@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form\Active;
 
 use Rubricate\Element\ISetAttributeElement;
@@ -14,7 +16,7 @@ class  ValueActiveForm
         $this->elem  = $elem;
     }
 
-    public function setActive($nameAttr, $value)
+    public function setActive($nameAttr, $value): object
     {
         $isNull  = ( is_null($this->value) );
         $isEqual = ( $this->value == $value );

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\ISetAttributeElement;
@@ -17,17 +19,17 @@ class AttrForm implements INameValueAttrForm, ISetAttributeElement
         $this->property = $property;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->attr->getName();
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->attr->getValue();
     }
 
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): object
     {
         if (in_array($property, $this->property)) {
             throw new \Exception(

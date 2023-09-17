@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\IGetElement;
@@ -17,7 +19,7 @@ class OptionGroupForm implements IGetElement
         $this->e->addChild(new OptionForm($optionArr, $selected));
     }
 
-    public function getElement()
+    public function getElement(): string
     {
         return $this->e->getElement();
     } 

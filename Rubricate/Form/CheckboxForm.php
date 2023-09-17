@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Form\Active\ValueActiveForm;
@@ -14,24 +16,24 @@ class CheckboxForm implements IElementForm
         $this->value = $value;
     }
 
-    public function setAttribute($property, $value = null)
+    public function setAttribute($property, $value = null): object
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName()
+    public function getName(): string
     {
         return $this->e->getName();
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return  $this->e->getElement();
     } 
 
-    public function checked($value)
+    public function checked($value): object
     {
         $checked = new ValueActiveForm($this->value, $this->e);
         $checked->setActive('checked', $value);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -18,19 +20,19 @@ class TextareaForm implements IElementForm
         $this->e->addChild(new StrElement($value));
     }
 
-    public function setAttribute($property, $value)
+    public function setAttribute($property, $value): object
     {
         $this->a->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getName()
+    public function getName(): string
     {
         return $this->a->getName();
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return $this->e->getElement();
     } 

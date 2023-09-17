@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -17,14 +19,14 @@ class OptionForm implements IGetElement
         $this->value  = $selected;
     }
 
-    public function getElement()
+    public function getElement(): string
     {
         self::optList();
 
         return implode('', $this->result);
     } 
 
-    private function optList()
+    private function optList(): void
     {
         foreach ($this->optArr as $value => $description)
         {
@@ -39,7 +41,7 @@ class OptionForm implements IGetElement
         } 
     } 
 
-    private function setSelected($value)
+    private function setSelected($value): object
     {
         $a = new ValueActiveForm($this->value, $this->e);
         $a->setActive('selected', $value);

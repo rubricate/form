@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -13,12 +15,13 @@ class SelectForm extends AbstractSelectForm
         parent::__construct($name);
     }
 
-    public function addChild(IGetElement $inner)
+    public function addChild(IGetElement $inner): object
     {
         $this->select->addChild($inner);
+        return $this;
     } 
 
-    protected function optionList()
+    protected function optionList(): void
     {
         $this->select->addChild(new StrElement(''));
     } 

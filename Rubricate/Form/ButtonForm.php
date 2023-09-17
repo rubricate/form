@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Form;
 
 use Rubricate\Element\CreateElement;
@@ -14,14 +16,14 @@ class ButtonForm implements IGetElement
         $this->e->addChild(new StrElement($value));
     }
 
-    public function setAttribute($property, $value)
+    public function setAttribute($property, $value): object
     {
         $this->e->setAttribute($property, $value);
 
         return $this;
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         return $this->e->getElement();
     } 
